@@ -13,7 +13,7 @@
       "Important: Your account has been temporarily locked. Click here to verify your identity and restore access.",
       "We've detected unusual activity on your account. Confirm your identity to prevent further issues."
     ],
-    "precaution": "Never click on links in unsolicited messages. Verify directly with the institution through official channels.",
+    "precaution": "Never click on links in unsolicited messages.\nVerify through (other) official channels.",
     "explanation": "Phishing scams trick you into providing personal information by pretending to be a legitimate entity."
   },
   {
@@ -30,8 +30,8 @@
       "Your entry in our sweepstakes was successful! Collect your $25,000 prize by filling out this form.",
       "You've won big! Claim your $500,000 cash prize by verifying your information."
     ],
-    "precaution": "Be skeptical of winning prizes in contests you didn't enter. Do not share personal information.",
-    "explanation": "Lottery scams promise large prizes or rewards, asking for personal details or payment to claim them."
+    "precaution": "Be skeptical of winning prizes through SMS.\nDo not share personal information.",
+    "explanation": "They want your personal information.\nThey want money."
   },
   {
     "flag": "grandchild_scam",
@@ -47,8 +47,8 @@
       "Hi Grandpa, I'm in a difficult situation and need $1500. Can you help me out?",
       "Nana, I've been mugged and need money to get home. Please send $600 as soon as you can."
     ],
-    "precaution": "Verify the caller's identity by contacting them or a family member directly before sending money.",
-    "explanation": "Grandparent scams involve scammers pretending to be a grandchild in distress, needing urgent financial help."
+    "precaution": "Verify by contacting Family members.\nConfirm by asking vor specific information.",
+    "explanation": "They aim for your kindheartedness."
   },
   {
     "flag": "government_impersonation_scam",
@@ -64,8 +64,8 @@
       "You have unpaid parking tickets. Failure to pay will result in a court summons.",
       "Your student loan forgiveness application is incomplete. Provide the missing information immediately."
     ],
-    "precaution": "Contact the government agency directly using official contact information before taking any action.",
-    "explanation": "Scammers impersonate government officials to intimidate victims into paying fake fines or providing personal information."
+    "precaution": "Contact the government agency directly.\nUse official contact information.",
+    "explanation": "They use fake fines to make money.\n They abuse the authority of the government."
   },
   {
     "flag": "tech_support_scam",
@@ -81,8 +81,8 @@
       "Virus detected: Your files are at risk. Call our support line for help.",
       "Security warning: Unauthorized access detected. Contact tech support to secure your account."
     ],
-    "precaution": "Do not call unknown tech support numbers. Contact your device's official support team directly.",
-    "explanation": "Tech support scams involve fake alerts about computer issues, prompting victims to call for 'support' and pay for unnecessary services."
+    "precaution": "Contact your device's official supporter.",
+    "explanation": "They want to charge unnecessary fees."
   },
   {
     "flag": "charity_scam",
@@ -98,8 +98,8 @@
       "Help us rescue and rehabilitate abandoned animals. Donate to our cause.",
       "Support our efforts to provide disaster relief. Your donation is critical."
     ],
-    "precaution": "Research charities before donating. Use trusted websites to verify the legitimacy of the organization.",
-    "explanation": "Charity scams exploit people's goodwill by pretending to be legitimate charities collecting money for fake causes."
+    "precaution": "Research charities before donating.\nUse trusted organization.",
+    "explanation": "They aim for your kindness."
   },
   {
     "flag": "health_insurance_scam",
@@ -115,8 +115,8 @@
       "Special offer: Get better coverage for less. Update your health insurance information now.",
       "Protect your health with our top-rated insurance plan. Sign up and save."
     ],
-    "precaution": "Contact your insurance provider directly to verify offers. Avoid sharing personal details with unknown entities.",
-    "explanation": "Health insurance scams promise low-cost insurance or medication, asking for personal and insurance information to exploit."
+    "precaution": "Contact your insurance directly\nAvoid sharing personal details.",
+    "explanation": "They want to bait you with low prices."
   },
   {
     "flag": "investment_scam",
@@ -132,8 +132,8 @@
       "Unlock high returns with our secure investment platform. Sign up today.",
       "Maximize your earnings with our proven investment strategies. Register now."
     ],
-    "precaution": "Research investment opportunities thoroughly. Consult with a financial advisor before making investments.",
-    "explanation": "Investment scams lure victims with promises of high returns and low risk, often resulting in financial loss."
+    "precaution": "Research investment opportunities thoroughly.\nConsult with a financial advisor.",
+    "explanation": "They lure you with high return rates."
   },
   {
     "flag": "delivery_scam",
@@ -149,8 +149,8 @@
       "You have a package waiting. Pay a small fee to schedule delivery.",
       "Delivery failed: Address confirmation needed. Provide your details to reschedule."
     ],
-    "precaution": "Verify delivery notifications through the carrier's official website. Avoid paying fees through unknown links.",
-    "explanation": "Delivery scams trick victims into paying fees or providing personal information by claiming a package is on hold."
+    "precaution": "Verify with the original carrier.\nAvoid paying fees through unknown links.",
+    "explanation": "They exploit the likelihood of you waiting for a delivery."
   },
   {
     "flag": "subscription_renewal_scam",
@@ -166,7 +166,7 @@
       "Subscription renewal required. Click the link to update your payment information.",
       "Reminder: Your subscription is ending. Renew now to keep your access."
     ],
-    "precaution": "Verify subscription renewal notices through the service's official website or customer support.",
-    "explanation": "Subscription renewal scams prompt victims to renew a subscription by providing payment details, often leading to financial theft."
+    "precaution": "Verify subscriptions through official means.\nContact the official customer support.",
+    "explanation": "They want to pocket the subscription money for them self."
   }
 ]
