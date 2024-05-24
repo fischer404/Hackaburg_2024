@@ -6,4 +6,5 @@
     <color name="cardBackground">#4682B4</color> <!-- Stronger blue -->
     <color name="textPrimary">#000000</color> <!-- Black -->
     <color name="textSecondary">#000000</color> <!-- Black -->
+    <color name="redBackground">#FFCDD2</color>
 </resources>

@@ -1,11 +1,13 @@
 package com.example.anti_sms_scam
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.cardview.widget.CardView
 
 class MessageAdapter(private val messages: List<Message>) :
     RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
@@ -14,6 +16,7 @@ class MessageAdapter(private val messages: List<Message>) :
         val sender: TextView = itemView.findViewById(R.id.sender)
         val messagePreview: TextView = itemView.findViewById(R.id.message_preview)
         val infoButton: ImageButton = itemView.findViewById(R.id.info_button)
+        val messageContainer: CardView = itemView.findViewById(R.id.message_container)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
@@ -25,6 +28,13 @@ class MessageAdapter(private val messages: List<Message>) :
         val message = messages[position]
         holder.sender.text = message.sender
         holder.messagePreview.text = message.content.take(50)
+
+        if (message.flag != null) {
+            holder.messageContainer.setCardBackgroundColor(Color.RED)
+        } else {
+            holder.messageContainer.setCardBackgroundColor(Color.WHITE)  // Or any other default color
+        }
+
         holder.infoButton.setOnClickListener {
             // Handle info button click
         }
