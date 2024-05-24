@@ -54,7 +54,8 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_info_outline_foreground"
                 android:contentDescription="@string/info"
-                app:tint="@color/black" />
+                app:tint="@color/black"
+                android:visibility="gone" /> <!-- Standardmäßig ausgeblendet -->
         </LinearLayout>
 
         <LinearLayout
@@ -65,14 +66,22 @@
             android:visibility="gone"
             android:paddingTop="8dp">
 
-            <!-- Inhalt des ausklappbaren Bereichs -->
             <TextView
-                android:id="@+id/extra_info"
+                android:id="@+id/scam_explanation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Extra information goes here"
+                android:text="Scam explanation goes here"
                 android:textSize="14sp"
                 android:textColor="@color/textSecondary" />
+
+            <TextView
+                android:id="@+id/precautions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precautions go here"
+                android:textSize="14sp"
+                android:textColor="@color/textSecondary"
+                android:paddingTop="8dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
