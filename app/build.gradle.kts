@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation ("com.fasterxml.jackson.core:jackson-databind:2.12.5")
+    implementation ("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
