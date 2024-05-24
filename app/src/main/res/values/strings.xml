@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">SMS Scam Shield</string>
     <string name="info">Information</string>
+    <string name="channel_name">SMS Notifications</string>
+    <string name="channel_description">Notifications for received SMS</string>
 </resources>
