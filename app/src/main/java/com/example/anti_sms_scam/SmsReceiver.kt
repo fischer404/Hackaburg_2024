@@ -3,9 +3,9 @@ package com.example.anti_sms_scam
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.telephony.SmsMessage
 import android.util.Log
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 class SmsReceiver : BroadcastReceiver() {
 
@@ -24,7 +24,7 @@ class SmsReceiver : BroadcastReceiver() {
                 val smsIntent = Intent("SMS_RECEIVED_ACTION")
                 smsIntent.putExtra("sender", sender)
                 smsIntent.putExtra("message", messageBody)
-                LocalBroadcastManager.getInstance(context).sendBroadcast(smsIntent)
+                context.sendBroadcast(smsIntent)
             }
         }
     }

@@ -14,20 +14,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CODE_READ_SMS = 1
     private val smsList = mutableListOf<Message>()
     private lateinit var smsUpdateReceiver: BroadcastReceiver
-    private lateinit var newSmsIndicator: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        newSmsIndicator = findViewById(R.id.newSmsIndicator)
 
         checkAndRequestPermissions()
 
@@ -39,12 +35,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(smsUpdateReceiver, IntentFilter("SMS_RECEIVED_ACTION"))
+        registerReceiver(smsUpdateReceiver, IntentFilter("SMS_RECEIVED_ACTION"))
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(smsUpdateReceiver)
+        unregisterReceiver(smsUpdateReceiver)
     }
 
     private fun checkAndRequestPermissions() {
@@ -87,19 +83,11 @@ class MainActivity : AppCompatActivity() {
             smsList.removeAt(smsList.size - 1) // Entferne die älteste SMS, um die Liste auf 10 zu beschränken
         }
         updateSmsDisplay()
-        showNewSmsIndicator()
     }
 
     private fun updateSmsDisplay() {
         val textView: TextView = findViewById(R.id.textView)
         textView.text = smsList.joinToString("\n\n") { "From: ${it.sender}\nMessage: ${it.content}\nFlag: ${it.flag}" }
-    }
-
-    private fun showNewSmsIndicator() {
-        newSmsIndicator.visibility = TextView.VISIBLE
-        newSmsIndicator.postDelayed({
-            newSmsIndicator.visibility = TextView.GONE
-        }, 3000) // Versteckt den Indikator nach 3 Sekunden
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
