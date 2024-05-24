@@ -1,11 +1,17 @@
 package com.example.anti_sms_scam
 
-
 import com.example.anti_sms_scam.Message
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import java.io.File
+
+data class PhishingScam(
+    val flag: String,
+    val messages: List<String>,
+    val precaution: String,
+    val explanation: String
+)
 
 class Flagger {
     private fun levenshteinDistance(s1: String, s2: String): Int {
@@ -32,32 +38,33 @@ class Flagger {
         return dp[len1][len2]
     }
 
-    private fun findClosestKey(map: Map<String, String>, target: String): String? {
+    private fun findClosestKey(target: String): String? {
+
+        val jsonString = File("scam_example.json").readText()
+        val mapper = jacksonObjectMapper().registerModule(KotlinModule())
+        val json : List<PhishingScam> =  mapper.readValue(jsonString)
+
+
         var minDistance = Int.MAX_VALUE
-        var closestKey = ""
-        for (key in map.keys) {
-            val distance = levenshteinDistance(key, target)
-            if (distance < minDistance) {
-                minDistance = distance
-                closestKey = key
+        var closestFlag = ""
+        for (type in json) {
+            for (msg in type.messages) {
+                val distance = levenshteinDistance(msg, target)
+                if (distance < minDistance) {
+                    minDistance = distance
+                    closestFlag = type.flag
+                }
             }
         }
         if (minDistance.toDouble()/target.length <= 0.3) {
-            return map[closestKey]
+            return closestFlag
         }
         return null
 
     }
 
-    private fun getJson(): Map<String, String> {
-        val jsonString = File("scam_example.json").readText()
-        val mapper = jacksonObjectMapper().registerModule(KotlinModule())
-        return mapper.readValue(jsonString)
-    }
-
     fun flagSMS(msg: Message) {
-        val map = getJson()
-        val flag = findClosestKey(map, msg.content)
+        val flag = findClosestKey(msg.content)
         msg.flag = flag
     }
 }
