@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.cardview.widget.CardView
@@ -17,6 +18,9 @@ class MessageAdapter(private val messages: List<Message>) :
         val messagePreview: TextView = itemView.findViewById(R.id.message_preview)
         val infoButton: ImageButton = itemView.findViewById(R.id.info_button)
         val messageContainer: CardView = itemView.findViewById(R.id.message_container)
+        val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandable_layout)
+        val scamExplanation: TextView = itemView.findViewById(R.id.scam_explanation)
+        val precautions: TextView = itemView.findViewById(R.id.precautions)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
@@ -31,12 +35,20 @@ class MessageAdapter(private val messages: List<Message>) :
 
         if (message.flag != null) {
             holder.messageContainer.setCardBackgroundColor(Color.RED)
+            holder.infoButton.visibility = View.VISIBLE // Nur für geflaggte Nachrichten sichtbar
+            holder.scamExplanation.text = message.scamExplanation
+            holder.precautions.text = message.precautions
         } else {
             holder.messageContainer.setCardBackgroundColor(Color.WHITE)  // Or any other default color
+            holder.infoButton.visibility = View.GONE
         }
 
         holder.infoButton.setOnClickListener {
-            // Handle info button click
+            if (holder.expandableLayout.visibility == View.VISIBLE) {
+                holder.expandableLayout.visibility = View.GONE
+            } else {
+                holder.expandableLayout.visibility = View.VISIBLE
+            }
         }
     }
 

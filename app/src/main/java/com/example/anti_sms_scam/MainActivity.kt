@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CODE_READ_SMS = 1
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MessageAdapter
     private var flagger = Flagger()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
