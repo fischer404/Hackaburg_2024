@@ -16,7 +16,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CODE_READ_SMS = 1
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var smsUpdateReceiver: BroadcastReceiver
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MessageAdapter
-
+    private var flagger = Flagger()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -88,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                     val smsBody = it.getString(it.getColumnIndex("body"))
                     val address = it.getString(it.getColumnIndex("address"))
                     val message = Message(sender = address, content = smsBody)
-                    smsList.add(message)
+                    addSms(message)
                     it.moveToNext()
                 }
             }
@@ -98,6 +97,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addSms(message: Message) {
+        flagger.flagSMS(this, message)
         smsList.add(0, message) // Neue SMS an den Anfang der Liste hinzufügen
         if (smsList.size > 10) {
             smsList.removeAt(smsList.size - 1) // Entferne die älteste SMS, um die Liste auf 10 zu beschränken
