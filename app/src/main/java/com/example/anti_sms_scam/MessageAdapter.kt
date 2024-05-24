@@ -35,11 +35,13 @@ class MessageAdapter(private val messages: List<Message>) :
         val message = messages[position]
         holder.sender.text = message.sender
 
-        // Set text preview based on whether the message is flagged and expanded
-        if (message.flag != null && holder.expandableLayout.visibility == View.VISIBLE) {
+        // Set text preview based on whether the expandable layout is visible or not
+        if (holder.expandableLayout.visibility == View.VISIBLE) {
             holder.messagePreview.text = message.content // Show full content
+            holder.messagePreview.maxLines = 100
         } else {
             holder.messagePreview.text = message.content.take(50) // Show preview
+            holder.messagePreview.maxLines = 1
         }
 
         if (message.flag != null) {
@@ -66,9 +68,11 @@ class MessageAdapter(private val messages: List<Message>) :
             if (holder.expandableLayout.visibility == View.VISIBLE) {
                 holder.expandableLayout.visibility = View.GONE
                 holder.messagePreview.text = message.content.take(50) // Restore preview
+                holder.messagePreview.maxLines = 1
             } else {
                 holder.expandableLayout.visibility = View.VISIBLE
                 holder.messagePreview.text = message.content // Show full content
+                holder.messagePreview.maxLines = 100
             }
         }
     }
