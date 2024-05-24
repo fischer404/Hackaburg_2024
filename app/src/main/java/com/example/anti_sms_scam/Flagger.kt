@@ -1,10 +1,9 @@
 package com.example.anti_sms_scam
 
-import com.example.anti_sms_scam.Message
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import java.io.File
+import android.content.Context
 
 data class PhishingScam(
     val flag: String,
@@ -38,9 +37,9 @@ class Flagger {
         return dp[len1][len2]
     }
 
-    private fun findClosestKey(target: String): String? {
+    private fun findClosestKey(context: Context, target: String): String? {
 
-        val jsonString = File("scam_example.json").readText()
+        val jsonString = context.assets.open("scam_example.json").bufferedReader().use { it.readText() }
         val mapper = jacksonObjectMapper().registerModule(KotlinModule())
         val json : List<PhishingScam> =  mapper.readValue(jsonString)
 
@@ -63,8 +62,8 @@ class Flagger {
 
     }
 
-    fun flagSMS(msg: Message) {
-        val flag = findClosestKey(msg.content)
+    fun flagSMS(context: Context, msg: Message) {
+        val flag = findClosestKey(context, msg.content)
         msg.flag = flag
     }
 }
