@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#ADD8E6</color> <!-- Soft light blue -->
+    <color name="cardBackground">#4682B4</color> <!-- Stronger blue -->
+    <color name="textPrimary">#000000</color> <!-- Black -->
+    <color name="textSecondary">#000000</color> <!-- Black -->
 </resources>
