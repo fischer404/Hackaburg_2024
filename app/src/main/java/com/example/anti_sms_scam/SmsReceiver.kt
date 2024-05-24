@@ -24,7 +24,7 @@ class SmsReceiver : BroadcastReceiver() {
 
         val builder = NotificationCompat.Builder(context, "SMS_RECEIVED_CHANNEL")
             .setSmallIcon(R.drawable.ic_sms_notification)
-            .setContentTitle("Alert! Scam Message Detected!")
+            .setContentTitle("Scam Message Detected.")
             .setContentText("Click here for more information.")
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
