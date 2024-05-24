@@ -9,21 +9,29 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CODE_READ_SMS = 1
     private val smsList = mutableListOf<Message>()
     private lateinit var smsUpdateReceiver: BroadcastReceiver
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: MessageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        recyclerView = findViewById(R.id.recyclerView)
+        adapter = MessageAdapter(smsList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
         checkAndRequestPermissions()
 
@@ -86,8 +94,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateSmsDisplay() {
-        val textView: TextView = findViewById(R.id.textView)
-        textView.text = smsList.joinToString("\n\n") { "From: ${it.sender}\nMessage: ${it.content}\nFlag: ${it.flag}" }
+        adapter.notifyDataSetChanged()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {

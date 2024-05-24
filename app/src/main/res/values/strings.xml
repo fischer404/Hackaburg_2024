@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SMS Scam Shield</string>
+    <string name="info">Information</string>
 </resources>
