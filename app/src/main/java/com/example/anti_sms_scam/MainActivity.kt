@@ -9,6 +9,7 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.telephony.SmsMessage
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -37,13 +38,24 @@ class MainActivity : AppCompatActivity() {
 
         smsUpdateReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
-                val sender = intent?.getStringExtra("sender") ?: return
-                val message = intent.getStringExtra("message") ?: return
-                addSms(Message(sender, message))
+                if (intent?.action == "android.provider.Telephony.SMS_RECEIVED") {
+                    val bundle = intent.extras
+                    if (bundle != null) {
+                        val pdus = bundle["pdus"] as Array<*>
+                        for (pdu in pdus) {
+                            val smsMessage = SmsMessage.createFromPdu(pdu as ByteArray)
+                            val sender = smsMessage.displayOriginatingAddress
+                            val message = smsMessage.displayMessageBody
+                            runOnUiThread {
+                                addSms(Message(sender, message))
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        registerReceiver(smsUpdateReceiver, IntentFilter("SMS_RECEIVED_ACTION"))
+        registerReceiver(smsUpdateReceiver, IntentFilter("android.provider.Telephony.SMS_RECEIVED"))
     }
 
     override fun onDestroy() {
