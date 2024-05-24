@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.cardview.widget.CardView
@@ -17,6 +18,7 @@ class MessageAdapter(private val messages: List<Message>) :
         val messagePreview: TextView = itemView.findViewById(R.id.message_preview)
         val infoButton: ImageButton = itemView.findViewById(R.id.info_button)
         val messageContainer: CardView = itemView.findViewById(R.id.message_container)
+        val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandable_layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
@@ -36,7 +38,11 @@ class MessageAdapter(private val messages: List<Message>) :
         }
 
         holder.infoButton.setOnClickListener {
-            // Handle info button click
+            if (holder.expandableLayout.visibility == View.VISIBLE) {
+                holder.expandableLayout.visibility = View.GONE
+            } else {
+                holder.expandableLayout.visibility = View.VISIBLE
+            }
         }
     }
 
