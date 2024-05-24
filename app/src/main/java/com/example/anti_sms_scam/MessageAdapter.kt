@@ -1,6 +1,7 @@
 package com.example.anti_sms_scam
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,9 @@ class MessageAdapter(private val messages: List<Message>) :
         val infoButton: ImageButton = itemView.findViewById(R.id.info_button)
         val messageContainer: CardView = itemView.findViewById(R.id.message_container)
         val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandable_layout)
+        val descriptionHeading: TextView = itemView.findViewById(R.id.description_heading)
         val scamExplanation: TextView = itemView.findViewById(R.id.scam_explanation)
+        val precautionsHeading: TextView = itemView.findViewById(R.id.precautions_heading)
         val precautions: TextView = itemView.findViewById(R.id.precautions)
     }
 
@@ -31,23 +34,45 @@ class MessageAdapter(private val messages: List<Message>) :
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         val message = messages[position]
         holder.sender.text = message.sender
-        holder.messagePreview.text = message.content.take(50)
+
+        // Set text preview based on whether the expandable layout is visible or not
+        if (holder.expandableLayout.visibility == View.VISIBLE) {
+            holder.messagePreview.text = message.content // Show full content
+            holder.messagePreview.maxLines = 100
+        } else {
+            holder.messagePreview.text = message.content.take(50) // Show preview
+            holder.messagePreview.maxLines = 1
+        }
 
         if (message.flag != null) {
             holder.messageContainer.setCardBackgroundColor(Color.RED)
             holder.infoButton.visibility = View.VISIBLE // Nur für geflaggte Nachrichten sichtbar
+            holder.messagePreview.setTypeface(null, Typeface.ITALIC)
             holder.scamExplanation.text = message.scamExplanation
             holder.precautions.text = message.precautions
+            holder.descriptionHeading.visibility = View.VISIBLE
+            holder.scamExplanation.visibility = View.VISIBLE
+            holder.precautionsHeading.visibility = View.VISIBLE
+            holder.precautions.visibility = View.VISIBLE
         } else {
             holder.messageContainer.setCardBackgroundColor(Color.WHITE)  // Or any other default color
             holder.infoButton.visibility = View.GONE
+            holder.messagePreview.setTypeface(null, Typeface.NORMAL)
+            holder.descriptionHeading.visibility = View.GONE
+            holder.scamExplanation.visibility = View.GONE
+            holder.precautionsHeading.visibility = View.GONE
+            holder.precautions.visibility = View.GONE
         }
 
         holder.infoButton.setOnClickListener {
             if (holder.expandableLayout.visibility == View.VISIBLE) {
                 holder.expandableLayout.visibility = View.GONE
+                holder.messagePreview.text = message.content.take(50) // Restore preview
+                holder.messagePreview.maxLines = 1
             } else {
                 holder.expandableLayout.visibility = View.VISIBLE
+                holder.messagePreview.text = message.content // Show full content
+                holder.messagePreview.maxLines = 100
             }
         }
     }

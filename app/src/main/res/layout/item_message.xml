@@ -67,21 +67,41 @@
             android:paddingTop="8dp">
 
             <TextView
+                android:id="@+id/description_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:visibility="gone" />
+
+            <TextView
                 android:id="@+id/scam_explanation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scam explanation goes here"
                 android:textSize="14sp"
-                android:textColor="@color/textSecondary" />
+                android:textColor="@color/textSecondary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/precautions_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precautions"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:visibility="gone"
+                android:paddingTop="8dp" />
 
             <TextView
                 android:id="@+id/precautions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Precautions go here"
                 android:textSize="14sp"
                 android:textColor="@color/textSecondary"
-                android:paddingTop="8dp" />
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

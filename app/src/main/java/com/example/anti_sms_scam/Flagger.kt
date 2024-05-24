@@ -37,7 +37,7 @@ class Flagger {
         return dp[len1][len2]
     }
 
-    private fun findClosestKey(context: Context, target: String): String? {
+    private fun findClosestKey(context: Context, target: String): Triple<String?, String?, String?> {
 
         val jsonString = context.assets.open("scam_example.json").bufferedReader().use { it.readText() }
         val mapper = jacksonObjectMapper().registerModule(KotlinModule())
@@ -45,25 +45,33 @@ class Flagger {
 
 
         var minDistance = Int.MAX_VALUE
-        var closestFlag = ""
+        var closestFlag: String? = null
+        var closestExplanation: String? = null
+        var closestPrecautions: String? = null
+
+
         for (type in json) {
             for (msg in type.messages) {
                 val distance = levenshteinDistance(msg, target)
                 if (distance < minDistance) {
                     minDistance = distance
                     closestFlag = type.flag
+                    closestExplanation = type.explanation
+                    closestPrecautions = type.precaution
                 }
             }
         }
         if (minDistance.toDouble()/target.length <= 0.3) {
-            return closestFlag
+            return Triple(closestFlag, closestExplanation, closestPrecautions)
         }
-        return null
+        return Triple(null, null, null)
 
     }
 
     fun flagSMS(context: Context, msg: Message) {
-        val flag = findClosestKey(context, msg.content)
+        val (flag, explanation, precautions) = findClosestKey(context, msg.content)
         msg.flag = flag
+        msg.scamExplanation = explanation
+        msg.precautions = precautions
     }
 }
