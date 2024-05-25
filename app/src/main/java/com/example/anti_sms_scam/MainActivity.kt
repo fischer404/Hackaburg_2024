@@ -123,7 +123,8 @@ class MainActivity : AppCompatActivity() {
                     val smsBody = it.getString(it.getColumnIndex("body"))
                     val address = it.getString(it.getColumnIndex("address"))
                     val message = Message(sender = address, content = smsBody)
-                    addSms(message)
+                    flagger.flagSMS(this, message)
+                    smsList.add(message)
                     it.moveToNext()
                 }
             }
