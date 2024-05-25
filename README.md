@@ -51,3 +51,5 @@ Imagine a world where every incoming message is safe, and every scam is instantl
 **SMSshield** perfectly embodies the theme "Connect the Unconnected" by reducing communication barriers for the most vulnerable groups and providing them a safe way to connect with their loved ones. With **SMSshield**, we take a significant step towards a safer digital world—one message at a time.
 
 Thank you for your attention and support! Together, we can make the world a bit safer.
+
+https://devpost.com/submit-to/21129-hackaburg-2024/manage/submissions/520579-smsshield/project_details/edit
