@@ -15,7 +15,6 @@ Imagine a world where every incoming message is safe, and every scam is instantl
 - Developed as an Android app in Kotlin.
 - Uses Levenshtein distance to flag dangerous SMS.
 - Integration of Python and ONNX for machine learning.
-- Utilizes Firebase for backend services.
 
 ### Next Steps
 
