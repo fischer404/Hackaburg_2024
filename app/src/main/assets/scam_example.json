@@ -1,6 +1,6 @@
 [
   {
-    "flag": "phishing_scam",
+    "flag": "Phishing Scam",
     "messages": [
       "Your bank account has been compromised. Please verify your personal information by clicking the link below.",
       "We've noticed unusual activity on your credit card. Verify your account to prevent suspension.",
@@ -13,11 +13,11 @@
       "Important: Your account has been temporarily locked. Click here to verify your identity and restore access.",
       "We've detected unusual activity on your account. Confirm your identity to prevent further issues."
     ],
-    "precaution": "Never click on links in unsolicited messages.\nVerify through (other) official channels.",
-    "explanation": "Phishing scams trick you into providing personal information by pretending to be a legitimate entity."
+    "precaution": "1. Never click on unknown link.\n2. Ask for advice before proceeding.\n3. Never share personal info.",
+    "explanation": "This scam aims at your personal information by pretending to be a legitimate entity."
   },
   {
-    "flag": "lottery_prize_scam",
+    "flag": "Lottery Prize Scam",
     "messages": [
       "Congratulations! You've won a $10,000 prize. Provide your personal details to claim your reward.",
       "You are the lucky winner of our annual lottery draw! Claim your $5,000,000 prize now.",
@@ -30,11 +30,11 @@
       "Your entry in our sweepstakes was successful! Collect your $25,000 prize by filling out this form.",
       "You've won big! Claim your $500,000 cash prize by verifying your information."
     ],
-    "precaution": "Be skeptical of winning prizes through SMS.\nDo not share personal information.",
-    "explanation": "They want your personal information.\nThey want money."
+    "precaution": "1. Be skeptical of surprise winning prizes.\n2. Do not share personal information.\n3. Never pay to claim prizes.",
+    "explanation": "This scam aims at your greediness, anything free is too good to be true"
   },
   {
-    "flag": "grandchild_scam",
+    "flag": "Relative Impersonation Scam",
     "messages": [
       "Grandma, I'm in trouble and need money urgently. Please send $2000 to help me out.",
       "Hi Grandpa, I had an accident and need money for the hospital. Please send $1500 right away.",
@@ -47,11 +47,11 @@
       "Hi Grandpa, I'm in a difficult situation and need $1500. Can you help me out?",
       "Nana, I've been mugged and need money to get home. Please send $600 as soon as you can."
     ],
-    "precaution": "Verify by contacting Family members.\nConfirm by asking vor specific information.",
-    "explanation": "They aim for your kindheartedness."
+    "precaution": "1. Verify with other family members.\n2. Confirm by asking for more personal information.",
+    "explanation": "This scam pretends to be your relative to steal your money or information."
   },
   {
-    "flag": "government_impersonation_scam",
+    "flag": "Government Impersonation Scam",
     "messages": [
       "This is the IRS. You owe back taxes. Immediate payment is required to avoid penalties.",
       "Your Social Security number has been suspended. Call us immediately to resolve the issue.",
@@ -64,11 +64,11 @@
       "You have unpaid parking tickets. Failure to pay will result in a court summons.",
       "Your student loan forgiveness application is incomplete. Provide the missing information immediately."
     ],
-    "precaution": "Contact the government agency directly.\nUse official contact information.",
-    "explanation": "They use fake fines to make money.\n They abuse the authority of the government."
+    "precaution": "1. Contact the government agency directly.\n2. Call official number.\n3. Ignore any payment demand.",
+    "explanation": "This scam pretends to be a government official to scare you for money or information."
   },
   {
-    "flag": "tech_support_scam",
+    "flag": "Tech Support Scam",
     "messages": [
       "Your computer has been infected with a virus. Contact our tech support immediately for assistance.",
       "We have detected malware on your system. Call our toll-free number to fix it now.",
@@ -81,11 +81,11 @@
       "Virus detected: Your files are at risk. Call our support line for help.",
       "Security warning: Unauthorized access detected. Contact tech support to secure your account."
     ],
-    "precaution": "Contact your device's official supporter.",
-    "explanation": "They want to charge unnecessary fees."
+    "precaution": "1. Call the official number.\n2. Never give access to your device.\n3. Never pay any money.\n4. Never give personal information.",
+    "explanation": "This scam pretends to be personnel from reputable companies to access your devices."
   },
   {
-    "flag": "charity_scam",
+    "flag": "Charity Scam",
     "messages": [
       "Please donate to our charity to help victims of the recent disaster. Your contribution is urgently needed.",
       "Support our cause to provide clean water to those in need. Donate now.",
@@ -98,11 +98,11 @@
       "Help us rescue and rehabilitate abandoned animals. Donate to our cause.",
       "Support our efforts to provide disaster relief. Your donation is critical."
     ],
-    "precaution": "Research charities before donating.\nUse trusted organization.",
-    "explanation": "They aim for your kindness."
+    "precaution": "1. Verify the charity organization.\n2. Never give out personal information.\n3. Donate through official means.",
+    "explanation": "This scam aim at your kindness for your money or personal information."
   },
   {
-    "flag": "health_insurance_scam",
+    "flag": "Health Insurance Scam",
     "messages": [
       "Get your discount prescription drugs now! Provide your insurance and personal details to claim the offer.",
       "Save on your medical bills with our health insurance plan. Sign up now.",
@@ -115,11 +115,11 @@
       "Special offer: Get better coverage for less. Update your health insurance information now.",
       "Protect your health with our top-rated insurance plan. Sign up and save."
     ],
-    "precaution": "Contact your insurance directly\nAvoid sharing personal details.",
-    "explanation": "They want to bait you with low prices."
+    "precaution": "1. Contact your insurance directly\n2. Avoid sharing personal details.",
+    "explanation": "This scam pretends to be insurance providers for your money or personal information."
   },
   {
-    "flag": "investment_scam",
+    "flag": "Investment Scam",
     "messages": [
       "Invest in this opportunity for high returns with minimal risk. Secure your retirement funds by signing up now.",
       "Double your money in just a few months. Join our exclusive investment program.",
@@ -132,11 +132,11 @@
       "Unlock high returns with our secure investment platform. Sign up today.",
       "Maximize your earnings with our proven investment strategies. Register now."
     ],
-    "precaution": "Research investment opportunities thoroughly.\nConsult with a financial advisor.",
-    "explanation": "They lure you with high return rates."
+    "precaution": "1. Research investment opportunities thoroughly.\n2. Consult with a financial advisor.\n3. Never give money without verifying first.",
+    "explanation": "This scams aims for your greediness with easy money and high-return rates."
   },
   {
-    "flag": "delivery_scam",
+    "flag": "Delivery Scam",
     "messages": [
       "You have a pending package delivery. Confirm your address and pay a small fee to release the package.",
       "Your parcel is waiting for delivery. Provide your details to schedule the delivery.",
@@ -149,11 +149,11 @@
       "You have a package waiting. Pay a small fee to schedule delivery.",
       "Delivery failed: Address confirmation needed. Provide your details to reschedule."
     ],
-    "precaution": "Verify with the original carrier.\nAvoid paying fees through unknown links.",
-    "explanation": "They exploit the likelihood of you waiting for a delivery."
+    "precaution": "1. Verify with the original carrier.\n2. Avoid paying random fees.\n3. Never click unknown links",
+    "explanation": "This scam exploits the likelihood of you waiting for a delivery."
   },
   {
-    "flag": "subscription_renewal_scam",
+    "flag": "Subscription Scam",
     "messages": [
       "Your antivirus subscription is about to expire. Click the link to renew and avoid losing protection.",
       "Your subscription to our service is ending soon. Renew now to continue enjoying our features.",
@@ -166,7 +166,7 @@
       "Subscription renewal required. Click the link to update your payment information.",
       "Reminder: Your subscription is ending. Renew now to keep your access."
     ],
-    "precaution": "Verify subscriptions through official means.\nContact the official customer support.",
-    "explanation": "They want to pocket the subscription money for them self."
+    "precaution": "1. Verify subscriptions through official means.\n2. Contact the official customer support.\n3. Cancel suspicious subscriptions.",
+    "explanation": "This scam pretends to be a subscription service for you to pay every month."
   }
 ]
