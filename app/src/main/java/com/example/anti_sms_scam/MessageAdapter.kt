@@ -48,6 +48,7 @@ class MessageAdapter(private val messages: List<Message>) :
             holder.messageContainer.setCardBackgroundColor(Color.RED)
             holder.infoButton.visibility = View.VISIBLE // Nur für geflaggte Nachrichten sichtbar
             holder.messagePreview.setTypeface(null, Typeface.ITALIC)
+            holder.descriptionHeading.text = """Description: ${message.flag}"""
             holder.scamExplanation.text = message.scamExplanation
             holder.precautions.text = message.precautions
             holder.descriptionHeading.visibility = View.VISIBLE
