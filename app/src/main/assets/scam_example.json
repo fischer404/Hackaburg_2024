@@ -14,7 +14,7 @@
       "We've detected unusual activity on your account. Confirm your identity to prevent further issues."
     ],
     "precaution": "1. Never click on unknown link.\n2. Ask for advice before proceeding.\n3. Never share personal info.",
-    "explanation": "This scam aims at your personal information by pretending to be a legitimate entity."
+    "explanation": "This scam targets your personal information by pretending to be a legitimate entity."
   },
   {
     "flag": "Lottery Prize Scam",
@@ -31,7 +31,7 @@
       "You've won big! Claim your $500,000 cash prize by verifying your information."
     ],
     "precaution": "1. Be skeptical of surprise winning prizes.\n2. Do not share personal information.\n3. Never pay to claim prizes.",
-    "explanation": "This scam aims at your greediness, anything free is too good to be true"
+    "explanation": "This scam targets your greediness, anything free is too good to be true"
   },
   {
     "flag": "Relative Impersonation Scam",
@@ -64,7 +64,7 @@
       "You have unpaid parking tickets. Failure to pay will result in a court summons.",
       "Your student loan forgiveness application is incomplete. Provide the missing information immediately."
     ],
-    "precaution": "1. Contact the government agency directly.\n2. Call official number.\n3. Ignore any payment demand.",
+    "precaution": "1. Contact the government agency directly.\n2. Call the official number.\n3. Ignore any payment demand.",
     "explanation": "This scam pretends to be a government official to scare you for money or information."
   },
   {
@@ -99,7 +99,7 @@
       "Support our efforts to provide disaster relief. Your donation is critical."
     ],
     "precaution": "1. Verify the charity organization.\n2. Never give out personal information.\n3. Donate through official means.",
-    "explanation": "This scam aim at your kindness for your money or personal information."
+    "explanation": "This scam targets your kindness for your money or personal information."
   },
   {
     "flag": "Health Insurance Scam",
@@ -115,8 +115,8 @@
       "Special offer: Get better coverage for less. Update your health insurance information now.",
       "Protect your health with our top-rated insurance plan. Sign up and save."
     ],
-    "precaution": "1. Contact your insurance directly\n2. Avoid sharing personal details.",
-    "explanation": "This scam pretends to be insurance providers for your money or personal information."
+    "precaution": "1. Contact your insurance directly.\n2. Avoid sharing personal details.",
+    "explanation": "This scam pretends to be insurance providers to get your money or personal information."
   },
   {
     "flag": "Investment Scam",
@@ -133,7 +133,7 @@
       "Maximize your earnings with our proven investment strategies. Register now."
     ],
     "precaution": "1. Research investment opportunities thoroughly.\n2. Consult with a financial advisor.\n3. Never give money without verifying first.",
-    "explanation": "This scams aims for your greediness with easy money and high-return rates."
+    "explanation": "This scams targets your greediness with easy money and high-return rates."
   },
   {
     "flag": "Delivery Scam",
@@ -149,7 +149,7 @@
       "You have a package waiting. Pay a small fee to schedule delivery.",
       "Delivery failed: Address confirmation needed. Provide your details to reschedule."
     ],
-    "precaution": "1. Verify with the original carrier.\n2. Avoid paying random fees.\n3. Never click unknown links",
+    "precaution": "1. Verify with the original carrier.\n2. Avoid paying random fees.\n3. Never click unknown links.",
     "explanation": "This scam exploits the likelihood of you waiting for a delivery."
   },
   {
